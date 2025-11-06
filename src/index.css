@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Islamic green and cream color scheme */
+    --background: 42 25% 97%;
+    --foreground: 160 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 40% 15%;
+
+    --primary: 155 45% 30%;
+    --primary-foreground: 42 90% 95%;
+
+    --secondary: 42 80% 55%;
+    --secondary-foreground: 160 40% 15%;
+
+    --muted: 42 20% 92%;
+    --muted-foreground: 160 15% 45%;
+
+    --accent: 42 85% 60%;
+    --accent-foreground: 160 40% 15%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 42 90% 95%;
+
+    --border: 42 20% 88%;
+    --input: 42 20% 88%;
+    --ring: 155 45% 30%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Islamic design */
+    --islamic-green: 155 45% 30%;
+    --islamic-gold: 42 85% 60%;
+    --cream: 42 25% 97%;
+    --urgent: 0 70% 50%;
+    --normal: 42 85% 60%;
+    --info: 210 85% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(155 45% 25%), hsl(155 50% 35%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%), hsl(42 85% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(42 25% 97%), hsl(42 20% 94%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(155 45% 30% / 0.25);
+    --shadow-card: 0 4px 20px -2px hsl(155 30% 20% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 160 30% 10%;
+    --foreground: 42 90% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 42 90% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 42 90% 95%;
+
+    --primary: 155 50% 45%;
+    --primary-foreground: 160 40% 5%;
+
+    --secondary: 42 70% 50%;
+    --secondary-foreground: 160 40% 5%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 42 30% 70%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 160 40% 5%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 42 90% 95%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 155 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
