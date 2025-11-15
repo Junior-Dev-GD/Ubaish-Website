@@ -18,9 +18,32 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import JsonResponse
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+def api_root(request):
+    """Simple API root view"""
+    return JsonResponse({
+        "message": "UBAISH Website API",
+        "version": "1.0",
+        "endpoints": {
+            "authentication": {
+                "register": "/api/auth/register/",
+                "login": "/api/auth/login/",
+                "profile": "/api/auth/profile/",
+                "token_refresh": "/api/auth/token/refresh/",
+            },
+            "resources": {
+                "users": "/api/users/",
+                "documents": "/api/documents/",
+                "fees": "/api/fees/",
+            },
+            "admin": "/admin/",
+        }
+    })
+
 urlpatterns = [
+    path("", api_root, name="api_root"),
     path("admin/", admin.site.urls),
     path("api/auth/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),

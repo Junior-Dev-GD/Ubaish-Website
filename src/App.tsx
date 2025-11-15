@@ -13,6 +13,7 @@ import Admissions from "./pages/Admissions";
 import News from "./pages/News";
 import StudentLife from "./pages/StudentLife";
 import Alumni from "./pages/Alumni";
+import AlumniDashboard from "./pages/AlumniDashboard";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/news" element={<News />} />
             <Route path="/student-life" element={<StudentLife />} />
             <Route path="/alumni" element={<Alumni />} />
+            <Route path="/alumni/dashboard" element={<AlumniDashboard />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
